@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>VukMaric</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="script/script.js"></script>
+        <script src="https://smtpjs.com/v3/smtp.js"></script>
+    </head>
+    <body>
+        <div id="wrapper">
+            <header>
+                <img src="resources\logo-no-background.png" alt="" class="pulsate">
+            </header>
+        <div class="container">
+                <nav id="pageList">
+                    <div id="pBa1" class="psudoBox active">
+                        <a id="a1" class="active" onClick="toggleActive('a1','pBa1')"> 
+                            Home
+                        </a>
+                    </div>
+                    <div id="pBa2" class="psudoBox inactive">
+                        <a id="a2" class="inactive" onClick="toggleActive('a2','pBa2')"> About me </a>
+                    </div>
+                    <div id="pBa3" class="psudoBox inactive">
+                        <a id="a3" class="inactive" onClick="toggleActive('a3','pBa3')"> Contact me </a>
+                    </div>
+                    <div id="pBa4" class="psudoBox inactive">
+                        <a id="a4" class="inactive" onClick="toggleActive('a4','pBa4')"> My projects </a>
+                    </div>
+                </nav>
+            <div id="content">
+                <div id="home" class="child active">
+                    <div id="nameIs">
+                        <p>Hello my name is</p> 
+                        <p id="name"></p>
+                    </div>
+                    <p id="Info">
+                        <span>
+                            I'm passonate about programing and i try to learn every day.
+                        </span>
+                        <span> 
+                            Feel free to explore the website to learn more about me.
+                        </span>
+                    </p>
+                </div>
+                <div id="aboutMe" class="child inactive">
+                    <p>I'm an aspiring progamer from</p>
+                        <a href="https://goo.gl/maps/N6koqHZ4aRvi6zQn8" target="_blank" class="location">
+                            <i class="fa fa-globe" aria-hidden="true" style="color:#7FDBFF"></i>
+                            Novi Sad, Serbia
+                        </a>
+                    <p>I'm a self taught programer.</p>
+                    <p>I've taught myself from a variety of sources, including YouTube and SoloLearn.
+                    </p>
+                    <p>Technologies I work with</p>
+                    <div id="techIcons" class="icons">
+                        <svg id="html" class="techIco" width="800px" height="800px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <title>language_html5</title>
+                            <rect width="24" height="24" fill="none"/>
+                            <path d="M12,17.56l4.07-1.13.55-6.1H9.38l-.18-2h7.6l.2-2H7l.56,6h6.89l-.23,2.58L12,15.5l-2.22-.6-.14-1.66h-2l.29,3.19L12,17.56M4.07,3H19.93L18.5,19.2,12,21,5.5,19.2Z"/>
+                        </svg>
+                        <svg  id="css" class="techIco" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 50 50" width="150px" height="150px" fill-rule="evenodd"><path fill-rule="evenodd" d="M 42 6 L 39 40 L 25 44 L 11 40 L 8 6 Z M 16.800781 28 L 20.800781 28 L 20.898438 30.5 L 25 31.898438 L 29.101563 30.5 L 29.398438 26 L 20.601563 26 L 20.398438 22 L 29.601563 22 L 29.898438 18 L 16.101563 18 L 15.800781 14 L 34.101563 14 L 33.601563 22 L 32.898438 33.5 L 25 36.101563 L 17.101563 33.5 Z"/></svg>
+                        <svg id="js" class="techIco" fill="#000000" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="256px" height="256px" viewBox="0 0 512.00 512.00" enable-background="new 0 0 512 512" xml:space="preserve" transform="matrix(1, 0, 0, 1, 0, 0)rotate(0)" stroke="#000000" stroke-width="0.00512"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g id="5151e0c8492e5103c096af88a51f17e3"> <path display="inline" d="M482.585,147.869v216.113c0,14.025-7.546,27.084-19.672,34.143L275.665,506.241 c-5.989,3.474-12.782,5.259-19.719,5.259c-6.838,0-13.649-1.785-19.639-5.259l-62.521-36.99c-9.326-5.207-4.775-7.059-1.692-8.128 c12.454-4.322,14.973-5.318,28.268-12.863c1.387-0.793,3.216-0.483,4.647,0.343l48.031,28.519c1.741,0.981,4.2,0.981,5.801,0 l187.263-108.086c1.744-0.996,2.862-2.983,2.862-5.053V147.869c0-2.117-1.118-4.094-2.906-5.163L258.874,34.716 c-1.726-1.01-4.03-1.01-5.768,0L65.962,142.736c-1.818,1.04-2.965,3.079-2.965,5.133v216.113c0,2.069,1.146,4.009,2.954,4.99 l51.299,29.654c27.829,13.903,44.875-2.485,44.875-18.956V166.309c0-3.017,2.423-5.396,5.439-5.396h23.747 c2.969,0,5.429,2.378,5.429,5.396v213.362c0,37.146-20.236,58.454-55.452,58.454c-10.816,0-19.347,0-43.138-11.713l-49.098-28.287 c-12.133-6.995-19.638-20.117-19.638-34.143V147.869c0-14.043,7.505-27.15,19.638-34.135L236.308,5.526 c11.85-6.701,27.608-6.701,39.357,0l187.248,108.208C475.039,120.748,482.585,133.826,482.585,147.869z M321.171,343.367 c-55.88,0-68.175-14.048-72.294-41.836c-0.477-2.966-3.018-5.175-6.063-5.175h-27.306c-3.382,0-6.096,2.703-6.096,6.104 c0,35.56,19.354,77.971,111.759,77.971c66.906,0,105.269-26.339,105.269-72.343c0-45.623-30.827-57.76-95.709-66.35 c-65.579-8.678-72.243-13.147-72.243-28.508c0-12.661,5.643-29.581,54.216-29.581c43.374,0,59.365,9.349,65.94,38.576 c0.579,2.755,3.083,4.765,5.923,4.765h27.409c1.7,0,3.315-0.73,4.47-1.943c1.158-1.28,1.773-2.947,1.611-4.695 c-4.241-50.377-37.713-73.844-105.354-73.844c-60.209,0-96.118,25.414-96.118,68.002c0,46.217,35.729,59,93.5,64.702 c69.138,6.782,74.504,16.883,74.504,30.488C384.589,333.299,365.655,343.367,321.171,343.367z"> </path> </g> </g></svg>
+                        <svg id="cpp" class="techIco" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M6.078 12A5.928 5.928 0 0 1 12 6.078a5.946 5.946 0 0 1 5.129 2.959l-1.499.867 5.027-2.902a1.579 1.579 0 0 0-.543-.575l-7.345-4.24c-.424-.245-1.116-.245-1.539 0l-7.345 4.24c-.422.244-.768.844-.768 1.333v8.48c0 .245.086.517.226.758l3.529-2.038A5.883 5.883 0 0 1 6.078 12z"/><path d="M14.564 10.519A2.971 2.971 0 0 0 12 9.039a2.964 2.964 0 0 0-2.564 4.441L12 12l2.564-1.481z"/><path d="m20.657 7.002-5.046 2.913-1.046.605-.001-.001L12 12l-2.563 1.48A2.964 2.964 0 0 0 12 14.961a2.97 2.97 0 0 0 2.565-1.481l2.563 1.483a5.944 5.944 0 0 1-5.129 2.959 5.926 5.926 0 0 1-5.128-2.962l-3.529 2.038c.14.242.332.453.543.575l7.345 4.24c.423.245 1.115.245 1.539 0l7.345-4.24c.211-.122.403-.333.543-.575.14-.241.226-.513.226-.758V7.76c0-.245-.086-.517-.226-.758zm-2.735 5.327h-.658v.658h-.657v-.658h-.658v-.658h.658v-.658h.657v.658h.658v.658zm2.468 0h-.658v.658h-.658v-.658h-.657v-.658h.657v-.658h.658v.658h.658v.658z"/></svg>
+                        <svg class="techIco"  viewBox="0 0 512 145" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMinYMin meet"><g ><path d="M471.05 51.611c-1.244 0-2.454.257-3.525.863l-33.888 19.57c-2.193 1.264-3.526 3.65-3.526 6.189v39.069c0 2.537 1.333 4.92 3.526 6.187l8.85 5.109c4.3 2.119 5.885 2.086 7.842 2.086 6.366 0 10.001-3.863 10.001-10.576V81.542c0-.545-.472-.935-1.007-.935h-4.245c-.544 0-1.007.39-1.007.935v38.566c0 2.975-3.1 5.968-8.13 3.453l-9.21-5.396c-.326-.177-.576-.49-.576-.863v-39.07c0-.37.247-.747.576-.935L470.547 57.8a.998.998 0 0 1 1.007 0l33.817 19.498c.322.194.576.553.576.936v39.069c0 .373-.188.755-.504.935l-33.889 19.498c-.29.173-.69.173-1.007 0l-8.706-5.18a.905.905 0 0 0-.863 0c-2.403 1.362-2.855 1.52-5.109 2.302-.555.194-1.398.495.288 1.44l11.368 6.69a6.995 6.995 0 0 0 3.526.936 6.949 6.949 0 0 0 3.525-.935l33.889-19.499c2.193-1.275 3.525-3.65 3.525-6.187v-39.07c0-2.538-1.332-4.92-3.525-6.187l-33.889-19.57c-1.062-.607-2.28-.864-3.525-.864z"/><path d="M480.116 79.528c-9.65 0-15.397 4.107-15.397 10.937 0 7.408 5.704 9.444 14.966 10.36 11.08 1.085 11.943 2.712 11.943 4.893 0 3.783-3.016 5.396-10.144 5.396-8.957 0-10.925-2.236-11.584-6.691-.078-.478-.447-.864-.936-.864h-4.389c-.54 0-1.007.466-1.007 1.008 0 5.703 3.102 12.447 17.916 12.447 10.723 0 16.908-4.209 16.908-11.584 0-7.31-4.996-9.273-15.398-10.648-10.51-1.391-11.512-2.072-11.512-4.533 0-2.032.85-4.75 8.634-4.75 6.954 0 9.524 1.5 10.577 6.189.092.44.48.791.935.791h4.39c.27 0 .532-.166.719-.36.184-.207.314-.44.288-.719-.68-8.074-6.064-11.872-16.909-11.872z"/></g><path d="M271.821.383a2.181 2.181 0 0 0-1.08.287 2.18 2.18 0 0 0-1.079 1.871v55.042c0 .54-.251 1.024-.719 1.295a1.501 1.501 0 0 1-1.511 0l-8.994-5.18a4.31 4.31 0 0 0-4.317 0l-35.903 20.721c-1.342.775-2.158 2.264-2.158 3.814v41.443c0 1.548.817 2.966 2.158 3.741l35.903 20.722a4.3 4.3 0 0 0 4.317 0l35.903-20.722a4.308 4.308 0 0 0 2.159-3.741V16.356a4.386 4.386 0 0 0-2.23-3.814L272.9.598c-.335-.187-.707-.22-1.079-.215zM40.861 52.115c-.684.027-1.328.147-1.942.503L3.015 73.34a4.3 4.3 0 0 0-2.158 3.741L.929 132.7c0 .773.399 1.492 1.079 1.87a2.096 2.096 0 0 0 2.159 0l21.297-12.231c1.349-.802 2.23-2.196 2.23-3.742V92.623c0-1.55.815-2.972 2.159-3.742l9.065-5.252a4.251 4.251 0 0 1 2.159-.576c.74 0 1.5.185 2.158.576l9.066 5.252a4.296 4.296 0 0 1 2.159 3.742v25.973c0 1.546.89 2.95 2.23 3.742l21.297 12.232a2.096 2.096 0 0 0 2.159 0 2.164 2.164 0 0 0 1.08-1.871l.07-55.618a4.28 4.28 0 0 0-2.158-3.741L43.235 52.618c-.607-.356-1.253-.475-1.942-.503h-.432zm322.624.503c-.75 0-1.485.19-2.158.576l-35.903 20.722a4.306 4.306 0 0 0-2.159 3.741V119.1c0 1.559.878 2.971 2.23 3.742l35.616 20.29c1.315.75 2.921.807 4.245.07l21.585-12.015c.685-.38 1.148-1.09 1.151-1.87a2.126 2.126 0 0 0-1.079-1.871l-36.119-20.722c-.676-.386-1.151-1.167-1.151-1.943v-12.95c0-.775.48-1.485 1.151-1.871l11.224-6.476a2.155 2.155 0 0 1 2.159 0L375.5 89.96a2.152 2.152 0 0 1 1.08 1.87v10.217a2.15 2.15 0 0 0 1.079 1.87c.673.389 1.487.39 2.158 0L401.331 91.4a4.325 4.325 0 0 0 2.159-3.742v-10c0-1.545-.82-2.966-2.159-3.742l-35.687-20.722a4.279 4.279 0 0 0-2.159-.575zm-107.35 30.939c.188 0 .408.046.576.143l12.304 7.123c.334.193.576.55.576.935v14.246c0 .387-.24.743-.576.936l-12.304 7.123a1.088 1.088 0 0 1-1.079 0l-12.303-7.123c-.335-.194-.576-.549-.576-.936V91.758c0-.386.242-.74.576-.935l12.303-7.122a.948.948 0 0 1 .504-.143v-.001z" /><path d="M148.714 52.402c-.748 0-1.488.19-2.158.576l-35.903 20.65c-1.343.773-2.159 2.265-2.159 3.813v41.443c0 1.55.817 2.966 2.159 3.742l35.903 20.721a4.297 4.297 0 0 0 4.317 0l35.903-20.721a4.308 4.308 0 0 0 2.158-3.742V77.441c0-1.55-.816-3.04-2.158-3.813l-35.903-20.65a4.297 4.297 0 0 0-2.159-.576zM363.413 89.385c-.143 0-.302 0-.431.072l-6.907 4.029a.84.84 0 0 0-.432.72v7.914c0 .298.172.571.432.72l6.907 3.957c.259.15.535.15.791 0l6.907-3.958a.846.846 0 0 0 .432-.719v-7.915a.846.846 0 0 0-.432-.719l-6.907-4.03c-.128-.075-.216-.07-.36-.07z" /></svg>
+                    </div>
+                    <p class="ct">CERTIFICATES</p>
+                    <div id="certificates" class="CertificateContainer">
+                        <img src="resources/C++ Begginer.jpg" alt="" id="img1" onclick="selectImage('img1')">
+                        <img src="resources\C++ Intermediate.png" alt="" id="img2" onclick="selectImage('img2')">
+                        <img src="resources\HTML.png" alt="" id="img3" onclick="selectImage('img3')">
+                    </div>
+                </div>
+                <div id="contactMe" class="child inactive">
+                    <p>
+                        <i class="fa fa-envelope-o" aria-hidden="true"></i>
+                        EMAIL: vuk.s.maric@gmail.com
+                    </p>
+                    <p>
+                        Say hello if you want to get in touch! 
+                        <span>🤗</span>
+                    </p>
+                    <a id="messageSend" onclick="sendEmail(this)">
+                        SAY HELLO!<span>👋</span>
+                    </a>
+                    <div id="socialTitle">
+                        <img src="resources\Logo icon.png" alt="">
+                        <p>MY SOCIAL NETWORK ACTIVITY</p>
+                        <img src="resources\Logo icon.png" alt="">
+                    </div>
+                    <div id="social">
+                        <a href="https://github.com/VukMar" target="_blank"><i class="fa fa-github"></i>VukMar</a>
+                        <a href="https://www.linkedin.com/in/vuk-maric-50367124a" target="_blank"><i class="fa fa-linkedin"></i>Vuk Maric</a>
+                    </div>
+                </div>
+                <div id="projects" class="inactive child">
+                    This page is under construction!
+                    <img id="underConstrunction" src="resources\UnderConstruction.png" alt="">
+                    We are working on it!
+                </div>
+            </div>
+        </div>
+        <footer>
+            <img src="resources\Logo icon.png" alt="" class="pulsate">
+            <a id="fa1"> © VUK MARIC 2023</a>
+            <nav class="footerNav">
+                    <a href="https://github.com/VukMar" target="_blank"><i class="fa fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/vuk-maric-50367124a" target="_blank"><i class="fa fa-linkedin"></i></a>
+            </nav>
+        </footer>
+        </div>
+    </body>
+</html>
