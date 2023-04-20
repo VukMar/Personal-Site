@@ -220,7 +220,10 @@ header img
 {
     padding: 1rem;
 }
-
+#aboutMe
+{
+					text-align: center;
+} 
 #aboutMe a.location
 {
     color: #7FDBFF;
