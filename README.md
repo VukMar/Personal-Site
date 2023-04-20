@@ -1,3 +1,3 @@
-# My first persoanl portfolio webisite
+# My first personal portfolio webisite
 
 Created using basic HTML, CSS and JavaScript.
