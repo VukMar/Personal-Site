@@ -1,6 +1,7 @@
+const userAgent = navigator.userAgent;
+
 function loadCSS() 
 {
-	const userAgent = navigator.userAgent;
   
 	if(/Mobile|Tablet/i.test(userAgent)) 
 	{
@@ -17,9 +18,8 @@ function loadCSS()
 	  	document.head.appendChild(link);
 	}
 }
-  
-loadCSS();
 
+loadCSS();
 
 function toggleContent(pageId)
 {
@@ -59,6 +59,7 @@ function toggleActive(linkId ,linkId2)
 				break;
 			case 'a2':
 				document.getElementById('content').style.height = 'auto';
+				setupCertificatesList();
 				toggleContent("aboutMe");
 				break;
 			case 'a3':
@@ -107,17 +108,90 @@ function hideDescription(event) {
   description.style.display = 'none';
 }
 
-function selectImage(id) {
+function selectImageDESKTOP(id) {
 	// Get all the images in the row
-	const images = document.getElementById('certificates').querySelectorAll('img');
+	const container = document.getElementById('certificates');
+	const images = container.querySelectorAll('img');
+	const selectedImageWidth = `${container.offsetWidth * 0.6}px`;
+	const unselectedImageWidth = `${(container.offsetWidth * 0.4)/(images.length)}px`;
 	images.forEach((image) =>
 	{
 		if (image.id === id) {
-			image.classList.add('selected');
-			image.classList.remove('notSelected');
+			image.style.width = selectedImageWidth;
+			image.style.opacity = 1;
 		} else {
-			image.classList.add('notSelected');
-			image.classList.remove('selected');
+			image.style.width = unselectedImageWidth;
+			image.style.opacity = 0.2;
 		}
 	});
 }
+
+function selectImageMOBILE(id) {
+	// Get all the images in the row
+	const container = document.getElementById('certificates');
+	const images = container.querySelectorAll('img');
+	const selectedImageHeight = `${container.clientHeight * 0.6}px`;
+	const unselectedImageHeight = `${(container.clientHeight * 0.4)/(images.length-1)}px`;
+	images.forEach((image) =>
+	{
+		if (image.id === id) {
+			image.style.height = selectedImageHeight;
+			image.style.opacity = 1;
+		} else {
+			image.style.height = unselectedImageHeight;
+			image.style.opacity = 0.2;
+		}
+	});
+}
+
+function setupCertificatesList()
+{
+	const imagesDiv = document.getElementById('certificates');
+	const containerWidth = imagesDiv.offsetWidth;
+	const containerHeight = imagesDiv.offsetHeight;
+	const images = imagesDiv.querySelectorAll('img');
+	images.forEach( img => {
+		if(/Mobile|Tablet/i.test(userAgent)) 
+		{
+			let height = containerHeight / (images.length + 1);
+			img.style.height = height+'px';
+		} 
+		else 
+		{
+			let width = containerWidth / (images.length) + 0.0;
+			img.style.width = width+'px';
+		}	
+		img.style.opacity = 0.2;
+	});
+}
+
+window.addEventListener("resize", function(){
+	console.log('resized!');
+	setupCertificatesList();
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+	const imagesDiv = document.getElementById('certificates');
+	const folderUrl = '/resources/certificates';
+	fetch(folderUrl)
+	.then(response => response.json())
+	.then(data => {
+		let num = 1;
+		data.forEach(img =>{
+			let image = document.createElement('img');
+			image.src = `${folderUrl}/${img}`;
+			image.id = `img${num}`;
+			if(/Mobile|Tablet/i.test(userAgent)) {
+				image.onclick = () => selectImageMOBILE(image.id);
+			}else {
+				image.onclick = () => selectImageDESKTOP(image.id);
+			}
+			imagesDiv.appendChild(image);
+			num++
+		})
+		setupCertificatesList();
+	})
+	.catch(error => console.error(error));
+});
+
+
