@@ -132,7 +132,6 @@ header img
 #content
 {
     margin-top: 1rem;
-    padding: 1rem;
     border: 2px white solid;
 }
 
@@ -232,6 +231,15 @@ header img
     padding: 1rem;
 }
 
+#aboutMe
+{
+    padding: 1rem;
+}
+
+#aboutMe p
+{
+    text-align: center;
+}
 
 #aboutMe a.location
 {
@@ -249,18 +257,21 @@ header img
 .CertificateContainer
 {
     display: flex;
+    align-items: center;
+    justify-content: center;
     width: 100%;
-    padding: 20px;
+    overflow: hidden;
+    min-height: 600px;
+    height: 600px;
 }
 
 .CertificateContainer img
 {
     object-fit:cover;
     border: 5px purple solid;
-    width: 33%;
-    height:800px;
     transition-duration: 1s;
     opacity: 0.2;
+    height: 600px;
 }
 
 .CertificateContainer img:hover
@@ -268,16 +279,6 @@ header img
     cursor: pointer;
     border-color: white;
     opacity: 1;
-}
-
-.CertificateContainer img.selected{
-    width: 68%;
-    opacity: 1;
-}
-
-.CertificateContainer img.notSelected{
-    width: 15%;
-    opacity: 0.2;
 }
 
 .CertificateContainer img.notSelected:hover{
